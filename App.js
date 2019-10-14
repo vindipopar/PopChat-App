@@ -1,27 +1,16 @@
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-import MapView from 'react-native-maps';
+import React, {Component} from 'react';
+import AppContainer from './src/Route/AppNavigator';
+import {Root} from 'native-base';
+import GeneralStatusBarColor from './src/Components/StatusBar';
 
-const App = () => {
-  return (
-    <View>
-      <MapView
-        initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-      />
-    </View>
-  );
-};
-
+class App extends Component {
+  render() {
+    return (
+      <Root>
+        <GeneralStatusBarColor backgroundColor="#075E54" barStyle="default" />
+        <AppContainer />
+      </Root>
+    );
+  }
+}
 export default App;
